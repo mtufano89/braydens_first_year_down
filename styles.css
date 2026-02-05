@@ -426,3 +426,13 @@ footer{
   .slideshow{ aspect-ratio: 4 / 3; }
   .logo-hero img{ max-width: 320px; }
 }
+@media (max-width: 940px){
+  .two-col{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .slideshow{ order: 1; }
+  .info{ order: 2; }
+  .rsvp-card{ order: 3; }
+}
