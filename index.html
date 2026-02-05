@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,7 +13,7 @@
   </head>
 
   <body class="field">
-    <div class="hash"></div>
+    <div class="hash" aria-hidden="true"></div>
 
     <!-- Background stickers -->
     <div class="stickers" aria-hidden="true">
@@ -22,31 +23,32 @@
       <div class="sticker foam" style="top: 380px; right: 44px;"></div>
 
       <div class="sticker jersey small" style="top: 180px; left: 220px;"></div>
-      <div class="sticker jersey small" style="top: 520px; right: 260px;"></div>
-
       <div class="sticker football small" style="top: 220px; left: 210px;"></div>
-      <div class="sticker football small" style="top: 520px; right: 240px;"></div>
 
       <div class="sticker star tiny" style="top: 140px; left: 420px;"></div>
       <div class="sticker star small" style="top: 220px; right: 360px;"></div>
       <div class="sticker star tiny" style="top: 360px; left: 520px;"></div>
       <div class="sticker star small" style="top: 460px; right: 440px;"></div>
-      <div class="sticker star tiny" style="top: 620px; left: 300px;"></div>
 
-      <!-- Red balloons -->
-      <div class="sticker balloon" style="top: 170px; left: 120px;"></div>
-      <div class="sticker balloon small" style="top: 520px; left: 70px;"></div>
+      <div class="sticker balloon" style="top: 160px; left: 110px;"></div>
+      <div class="sticker balloon small" style="top: 560px; left: 70px;"></div>
       <div class="sticker balloon" style="top: 220px; right: 120px;"></div>
       <div class="sticker balloon small" style="top: 560px; right: 120px;"></div>
     </div>
 
-    <main class="wrap">
-      <section class="two-col" id="top">
-        <!-- LEFT COLUMN (stacked) -->
+    <main class="wrap" id="top">
+      <section class="two-col">
+        <!-- LEFT COLUMN -->
         <div class="left-stack">
           <!-- Slideshow -->
           <div class="card soft">
-            <div class="slideshow">
+            <div class="slideshow" aria-label="Highlight reel slideshow">
+              <img
+                id="slide"
+                src="images/slideshow/brayden1.JPG"
+                alt="Brayden highlight"
+              />
+
               <div class="slideshow-bar">
                 <span class="label">Highlight Reel</span>
                 <a class="btn" href="#rsvp">RSVP</a>
@@ -54,28 +56,60 @@
             </div>
           </div>
 
-          <!-- RSVP goes DIRECTLY under slideshow -->
+          <!-- RSVP -->
           <div class="card soft rsvp-card" id="rsvp">
             <div class="rsvp-head">
-              <h3 class="rsvp-title">RSVP</h3>
+              <h2 class="rsvp-title">RSVP</h2>
               <p class="rsvp-note">Please RSVP so we can plan food and seating.</p>
             </div>
 
-            <div class="rsvp-embed">
-              <iframe
-                title="Brayden RSVP"
-                src="https://docs.google.com/forms/d/e/1FAIpQLScg9131ppWFsLx8Uxxwcbyz32Tg4i_NoDY9KA6TZps7DUAphA/viewform?embedded=true"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              >
-                Loading…
-              </iframe>
-            </div>
+            <form
+              class="rsvp-form"
+              action="https://formsubmit.co/m.tufano89@gmail.com"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="Brayden First Birthday RSVP" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+
+              <div class="form-grid">
+                <label>
+                  Full Name
+                  <input type="text" name="name" required />
+                </label>
+
+                <label>
+                  Will you be attending?
+                  <select name="attending" required>
+                    <option value="">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </label>
+
+                <label>
+                  Number of Guests
+                  <input type="number" name="guests" min="1" max="10" placeholder="1" />
+                </label>
+
+                <label class="full">
+                  Message (optional)
+                  <textarea
+                    name="message"
+                    rows="3"
+                    placeholder="Anything we should know?"
+                  ></textarea>
+                </label>
+              </div>
+
+              <button class="btn btn-wide" type="submit">Submit RSVP</button>
+              <p class="fineprint">No account needed. Just fill it out and hit submit.</p>
+            </form>
           </div>
         </div>
 
-        <!-- RIGHT COLUMN (party info only once) -->
-        <div class="card info" id="party-info">
+        <!-- RIGHT COLUMN -->
+        <div class="card info">
           <div class="logo-hero">
             <img src="images/logo.png" alt="Brayden’s First Year Down" />
           </div>
@@ -115,15 +149,41 @@
             </div>
           </div>
 
-          <a class="btn" href="#rsvp" style="width:100%;">RSVP</a>
+          <a class="btn btn-wide" href="#rsvp">RSVP</a>
         </div>
       </section>
 
       <footer>
-        <div class="card soft footer-card">
-          Made with love for Brayden 🏈💚
-        </div>
+        <div class="card soft footer-card">Made with love for Brayden 🏈💚</div>
       </footer>
     </main>
+
+    <script>
+      const slides = [
+        "images/slideshow/brayden1.JPG",
+        "images/slideshow/brayden2.JPG",
+        "images/slideshow/brayden3.JPG",
+        "images/slideshow/brayden4.JPG",
+        "images/slideshow/brayden5.JPG",
+        "images/slideshow/brayden6.JPG",
+        "images/slideshow/brayden7.JPG",
+        "images/slideshow/brayden8.JPG",
+        "images/slideshow/brayden9.JPG"
+      ];
+
+      let i = 0;
+      const img = document.getElementById("slide");
+
+      // Preload for smoother transitions
+      slides.forEach((src) => {
+        const pre = new Image();
+        pre.src = src;
+      });
+
+      setInterval(() => {
+        i = (i + 1) % slides.length;
+        img.src = slides[i];
+      }, 3000);
+    </script>
   </body>
 </html>
