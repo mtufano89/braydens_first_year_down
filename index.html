@@ -2,14 +2,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-   <meta property="og:title" content="Brayden’s First Year Down" />
-<meta property="og:description" content="Join us to celebrate Brayden turning ONE!" />
-<meta property="og:image" content="https://braydenturns1.com/images/logo.png" />
-<meta property="og:url" content="https://braydenturns1.com" />
-<meta property="og:type" content="website" />
-
-<meta name="twitter:card" content="summary_large_image" />
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Brayden’s First Year Down | RSVP</title>
+    <meta
+      name="description"
+      content="Brayden’s First Year Down football themed first birthday RSVP page."
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -18,23 +17,23 @@
 
     <!-- Background stickers -->
     <div class="stickers" aria-hidden="true">
-      <div class="sticker trophy" style="top: 110px; left: 34px;"></div>
-      <div class="sticker jersey" style="top: 120px; right: 34px;"></div>
-      <div class="sticker helmet" style="top: 360px; left: 44px;"></div>
-      <div class="sticker foam" style="top: 380px; right: 44px;"></div>
+      <div class="sticker trophy" style="top: 110px; left: 34px"></div>
+      <div class="sticker jersey" style="top: 120px; right: 34px"></div>
+      <div class="sticker helmet" style="top: 360px; left: 44px"></div>
+      <div class="sticker foam" style="top: 380px; right: 44px"></div>
 
-      <div class="sticker jersey small" style="top: 180px; left: 220px;"></div>
-      <div class="sticker football small" style="top: 220px; left: 210px;"></div>
+      <div class="sticker jersey small" style="top: 180px; left: 220px"></div>
+      <div class="sticker football small" style="top: 220px; left: 210px"></div>
 
-      <div class="sticker star tiny" style="top: 140px; left: 420px;"></div>
-      <div class="sticker star small" style="top: 220px; right: 360px;"></div>
-      <div class="sticker star tiny" style="top: 360px; left: 520px;"></div>
-      <div class="sticker star small" style="top: 460px; right: 440px;"></div>
+      <div class="sticker star tiny" style="top: 140px; left: 420px"></div>
+      <div class="sticker star small" style="top: 220px; right: 360px"></div>
+      <div class="sticker star tiny" style="top: 360px; left: 520px"></div>
+      <div class="sticker star small" style="top: 460px; right: 440px"></div>
 
-      <div class="sticker balloon" style="top: 160px; left: 110px;"></div>
-      <div class="sticker balloon small" style="top: 560px; left: 70px;"></div>
-      <div class="sticker balloon" style="top: 220px; right: 120px;"></div>
-      <div class="sticker balloon small" style="top: 560px; right: 120px;"></div>
+      <div class="sticker balloon" style="top: 160px; left: 110px"></div>
+      <div class="sticker balloon small" style="top: 560px; left: 70px"></div>
+      <div class="sticker balloon" style="top: 220px; right: 120px"></div>
+      <div class="sticker balloon small" style="top: 560px; right: 120px"></div>
     </div>
 
     <main class="wrap" id="top">
@@ -42,18 +41,16 @@
         <!-- LEFT COLUMN -->
         <div class="left-stack">
           <!-- Slideshow -->
-          <div class="card soft">
-            <div class="slideshow" aria-label="Highlight reel slideshow">
-              <img
-                id="slide"
-                src="images/slideshow/brayden1.JPG"
-                alt="Brayden highlight"
-              />
-
-              <div class="slideshow-bar">
-                <span class="label">Highlight Reel</span>
-                <a class="btn" href="#rsvp">RSVP</a>
-              </div>
+          <div class="card slideshow" aria-label="Highlight Reel Slideshow">
+            <img
+              id="slide"
+              src="images/slideshow/brayden1.JPG"
+              alt="Brayden highlight"
+              loading="eager"
+            />
+            <div class="slideshow-bar">
+              <span class="label">Highlight Reel</span>
+              <a class="btn" href="#rsvp">RSVP</a>
             </div>
           </div>
 
@@ -109,8 +106,8 @@
           </div>
         </div>
 
-        <!-- RIGHT COLUMN -->
-        <div class="card info">
+        <!-- RIGHT COLUMN (party info) -->
+        <aside class="card info" aria-label="Party Info">
           <div class="logo-hero">
             <img src="images/logo.png" alt="Brayden’s First Year Down" />
           </div>
@@ -151,7 +148,7 @@
           </div>
 
           <a class="btn btn-wide" href="#rsvp">RSVP</a>
-        </div>
+        </aside>
       </section>
 
       <footer>
@@ -160,6 +157,8 @@
     </main>
 
     <script>
+      // IMPORTANT: your filenames are .JPG (uppercase) in the HTML above.
+      // Keep these EXACT or your images will not load on GitHub Pages.
       const slides = [
         "images/slideshow/brayden1.JPG",
         "images/slideshow/brayden2.JPG",
@@ -175,15 +174,17 @@
       let i = 0;
       const img = document.getElementById("slide");
 
-      // Preload for smoother transitions
-      slides.forEach((src) => {
-        const pre = new Image();
-        pre.src = src;
-      });
-
       setInterval(() => {
         i = (i + 1) % slides.length;
-        img.src = slides[i];
+        img.classList.add("fade");
+        // swap after fade starts
+        setTimeout(() => {
+          img.src = slides[i];
+        }, 250);
+        // remove fade class so it can trigger again
+        setTimeout(() => {
+          img.classList.remove("fade");
+        }, 550);
       }, 3000);
     </script>
   </body>

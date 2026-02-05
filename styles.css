@@ -426,13 +426,18 @@ footer{
   .slideshow{ aspect-ratio: 4 / 3; }
   .logo-hero img{ max-width: 320px; }
 }
+/* Mobile: show Party Info first, then Slideshow + RSVP */
 @media (max-width: 940px){
   .two-col{
-    display:flex;
-    flex-direction:column;
+    grid-template-columns: 1fr;
   }
 
-  .slideshow{ order: 1; }
-  .info{ order: 2; }
-  .rsvp-card{ order: 3; }
+  /* Force visual order */
+  .info{
+    order: 1;
+  }
+
+  .left-stack{
+    order: 2;
+  }
 }
