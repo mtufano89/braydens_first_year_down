@@ -177,5 +177,15 @@
         }, 550);
       }, 3000);
     </script>
+    <script>
+  (function () {
+    // If someone opens a link that includes #rsvp (or any hash), jump to top on first load
+    if (window.location.hash) {
+      window.scrollTo(0, 0);
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  })();
+</script>
+
   </body>
 </html>
