@@ -1,40 +1,36 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <!-- REQUIRED for mobile layout -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- REQUIRED for mobile layout -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brayden’s First Year Down | RSVP</title>
+    <meta name="description" content="Join us to celebrate Brayden turning ONE!" />
 
-  <title>Brayden’s First Year Down | RSVP</title>
+    <!-- Open Graph preview (text message / social preview) -->
+    <meta property="og:title" content="Brayden’s First Year Down" />
+    <meta property="og:description" content="Tap here to RSVP!" />
+    <meta property="og:image" content="https://braydenturns1.com/images/logo.png" />
+    <meta property="og:url" content="https://braydenturns1.com" />
+    <meta property="og:type" content="website" />
 
-  <meta
-    name="description"
-    content="Join us to celebrate Brayden turning ONE!"
-  />
+    <!-- iMessage / Twitter preview -->
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Open Graph preview (text message / social preview) -->
-  <meta property="og:title" content="Brayden’s First Year Down" />
-  <meta property="og:description" content="Tap here to RSVP!" />
-  <meta property="og:image" content="https://braydenturns1.com/images/logo.png" />
-  <meta property="og:url" content="https://braydenturns1.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- iMessage / Twitter preview -->
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="stylesheet" href="styles.css" />
-</head>
-
-<div class="rsvp-banner">
-  <div class="banner-track">
-    Please RSVP by June 6th 2026 • Please RSVP by June 6th 2026 • Please RSVP by June 6th 2026
-  </div>
-</div>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
   <body class="field">
     <div class="hash" aria-hidden="true"></div>
+
+    <!-- Banner must be INSIDE body -->
+    <div class="rsvp-banner" role="status" aria-label="RSVP deadline banner">
+      <div class="banner-track">
+        Please RSVP by June 6th 2026 • Please RSVP by June 6th 2026 • Please RSVP by June 6th 2026 •
+        Please RSVP by June 6th 2026 • Please RSVP by June 6th 2026 •
+      </div>
+    </div>
 
     <!-- Background stickers -->
     <div class="stickers" aria-hidden="true">
@@ -58,119 +54,131 @@
     </div>
 
     <main class="wrap" id="top">
-      <section class="two-col">
-        <!-- LEFT COLUMN -->
-        <div class="left-stack">
-          <!-- Slideshow -->
-          <div class="card slideshow" aria-label="Highlight Reel Slideshow">
-            <img
-              id="slide"
-              src="images/slideshow/brayden1.JPG"
-              alt="Brayden highlight"
-              loading="eager"
-            />
-            <div class="slideshow-bar">
-              <span class="label">Highlight Reel</span>
-              <a class="btn" href="#rsvp">RSVP</a>
-            </div>
-          </div>
+      <section class="layout">
+  <!-- 1) Slideshow (LEFT, TOP) -->
+  <div class="card slideshow" aria-label="Highlight Reel Slideshow">
+    <img
+      id="slide"
+      src="images/slideshow/brayden1.JPG"
+      alt="Brayden highlight"
+      loading="eager"
+    />
+    <div class="slideshow-bar">
+      <span class="label">Highlight Reel</span>
+      <a class="btn" href="#rsvp">RSVP</a>
+    </div>
+  </div>
 
-          <!-- RSVP -->
-          <div class="card soft rsvp-card" id="rsvp">
-            <div class="rsvp-head">
-              <h2 class="rsvp-title">RSVP</h2>
-              <p class="rsvp-note">Please RSVP so we can plan food and seating.</p>
-            </div>
+  <!-- 2) Party Info (RIGHT, spans) -->
+  <aside class="card info" aria-label="Party Info">
+    <div class="logo-hero">
+      <img src="images/logo.png" alt="Brayden’s First Year Down" />
+    </div>
 
-            <form
-              class="rsvp-form"
-              action="https://formsubmit.co/m.tufano89@gmail.com"
-              method="POST"
-            >
-              <input type="hidden" name="_subject" value="Brayden First Birthday RSVP" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
+    <p class="subtitle">Join us to celebrate Brayden turning ONE.</p>
 
-              <div class="form-grid">
-                <label>
-                  Full Name
-                  <input type="text" name="name" required />
-                </label>
+    <div class="info-list">
+      <div class="row">
+        <div class="icon">📅</div>
+        <div>
+          <strong>Date &amp; Time</strong>
+          <div>Saturday, June 20th, 2026 at 12:00 PM</div>
+        </div>
+      </div>
 
-                <label>
-                  Will you be attending?
-                  <select name="attending" required>
-                    <option value="">Select</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                  </select>
-                </label>
-
-                <label>
-                  Number of Guests
-                  <input type="number" name="guests" min="1" max="10" placeholder="1" />
-                </label>
-
-                <label class="full">
-                  Message (optional)
-                  <textarea
-                    name="message"
-                    rows="3"
-                    placeholder="Anything we should know?"
-                  ></textarea>
-                </label>
-              </div>
-
-              <button class="btn btn-wide" type="submit">Submit RSVP</button>
-              <p class="fineprint">No account needed. Just fill it out and hit submit.</p>
-            </form>
+      <div class="row">
+        <div class="icon">📍</div>
+        <div>
+          <strong>Location</strong>
+          <div>
+            East Creek Landing<br />
+            390 South Union St<br />
+            Guilford, CT 06437
           </div>
         </div>
+      </div>
 
-        <!-- RIGHT COLUMN (party info) -->
-        <aside class="card info" aria-label="Party Info">
-          <div class="logo-hero">
-            <img src="images/logo.png" alt="Brayden’s First Year Down" />
+      <div class="row">
+        <div class="icon">🍕</div>
+        <div>
+          <strong>Food</strong>
+          <div>
+            Apizza Grande Pizza Truck<br />
+            Salad, breads, dessert, and coffee
           </div>
+        </div>
+      </div>
+    </div>
 
-          <p class="subtitle">Join us to celebrate Brayden turning ONE.</p>
+    <a class="btn btn-wide" href="#rsvp">RSVP</a>
+  </aside>
 
-          <div class="info-list">
-            <div class="row">
-              <div class="icon">📅</div>
-              <div>
-                <strong>Date & Time</strong>
-                <div>Saturday, June 20th, 2026 at 12:00 PM</div>
-              </div>
-            </div>
+  <!-- 3) RSVP (LEFT, BOTTOM) -->
+  <div class="card soft rsvp-card" id="rsvp" aria-label="RSVP Form">
+    <div class="rsvp-head">
+      <h2 class="rsvp-title">RSVP</h2>
+      <p class="rsvp-note">Please RSVP so we can plan food and seating.</p>
+    </div>
 
-            <div class="row">
-              <div class="icon">📍</div>
-              <div>
-                <strong>Location</strong>
-                <div>
-                  East Creek Landing<br />
-                  390 South Union St<br />
-                  Guilford, CT 06437
-                </div>
-              </div>
-            </div>
+    <form
+      class="rsvp-form"
+      action="https://docs.google.com/forms/d/e/1FAIpQLScg9131ppWFsLx8Uxxwcbyz32Tg4i_NoDY9KA6TZps7DUAphA/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted=true;"
+    >
+      <div class="form-grid">
+        <label>
+          Guest Name
+          <input type="text" name="entry.2069765326" required />
+        </label>
 
-            <div class="row">
-              <div class="icon">🍕</div>
-              <div>
-                <strong>Food</strong>
-                <div>
-                  Apizza Grande Pizza Truck<br />
-                  Salad, breads, dessert, and coffee
-                </div>
-              </div>
-            </div>
-          </div>
+        <label>
+          Will you attend?
+          <select name="entry.858085940" required>
+            <option value="" selected disabled>Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </label>
 
-          <a class="btn btn-wide" href="#rsvp">RSVP</a>
-        </aside>
-      </section>
+        <label>
+          How many adults?
+          <input type="number" name="entry.432970597" min="0" max="20" inputmode="numeric" />
+        </label>
+
+        <label>
+          How many children?
+          <input type="number" name="entry.153119054" min="0" max="20" inputmode="numeric" />
+        </label>
+
+        <label class="full">
+          Message to Brayden (optional)
+          <textarea name="entry.734962824" rows="3" placeholder="Anything we should know?"></textarea>
+        </label>
+      </div>
+
+      <button class="btn btn-wide" type="submit">Submit RSVP</button>
+
+      <p class="fineprint" id="rsvp-note">No account needed. Just fill it out and hit submit.</p>
+      <p class="fineprint" id="rsvp-success" style="display:none;">Thanks. Your RSVP was submitted.</p>
+    </form>
+
+    <iframe
+      name="hidden_iframe"
+      id="hidden_iframe"
+      style="display:none;"
+      onload="if(submitted){ document.getElementById('rsvp-success').style.display='block'; document.getElementById('rsvp-note').style.display='none'; submitted=false; }"
+    ></iframe>
+
+    <script>
+      let submitted = false;
+    </script>
+  </div>
+</section>
+
+
+      
 
       <footer>
         <div class="card soft footer-card">Made with love for Brayden 🏈💚</div>
@@ -178,8 +186,9 @@
     </main>
 
     <script>
-      // IMPORTANT: your filenames are .JPG (uppercase) in the HTML above.
-      // Keep these EXACT or your images will not load on GitHub Pages.
+      let submitted = false;
+
+      // IMPORTANT: filenames are .JPG (uppercase). Keep exact.
       const slides = [
         "images/slideshow/brayden1.JPG",
         "images/slideshow/brayden2.JPG",
@@ -198,11 +207,9 @@
       setInterval(() => {
         i = (i + 1) % slides.length;
         img.classList.add("fade");
-        // swap after fade starts
         setTimeout(() => {
           img.src = slides[i];
         }, 250);
-        // remove fade class so it can trigger again
         setTimeout(() => {
           img.classList.remove("fade");
         }, 550);
