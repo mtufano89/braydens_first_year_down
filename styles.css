@@ -560,6 +560,16 @@ footer{
   gap:12px;
   z-index:2;
 }
+.slideshow {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+
 
 /* =========================
    Mobile: keep your good order
