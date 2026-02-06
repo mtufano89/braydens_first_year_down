@@ -441,3 +441,32 @@ footer{
     order: 2;
   }
 }
+/* RSVP Banner */
+.rsvp-banner{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #d32f2f;
+  border-bottom: 3px solid #ffffff;
+  overflow: hidden;
+}
+
+.banner-track{
+  white-space: nowrap;
+  display: inline-block;
+  padding: 10px 0;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 1px;
+  animation: scrollBanner 14s linear infinite;
+}
+
+/* scrolling animation */
+@keyframes scrollBanner{
+  from{
+    transform: translateX(100%);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
